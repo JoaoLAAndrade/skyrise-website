@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyrise Construction — Rise Above the Surface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B2D5B;--gray:#6B7280;--blue:#00A6E8;--mist:#D8DEE6;--ink:#0a1a33;--bg:#F5F7FA}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+h1,h2,h3,.btn,.eyebrow,nav a{font-family:Montserrat,sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{letter-spacing:.32em;text-transform:uppercase;font-size:.75rem;font-weight:600;color:var(--blue)}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--navy);font-weight:800;letter-spacing:.02em;line-height:1.15;margin:.6rem 0 1rem}
+.lead{color:var(--gray);max-width:620px;font-size:1.05rem}
+.btn{display:inline-block;padding:15px 30px;border-radius:4px;font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;transition:.2s;border:2px solid transparent;cursor:pointer}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#0090cc}
+.btn-ghost{border-color:#fff;color:#fff}.btn-ghost:hover{background:#fff;color:var(--navy)}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--mist)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:46px}
+.brand b{font-family:Montserrat;font-weight:800;font-size:1.35rem;color:var(--navy);letter-spacing:.06em;line-height:1}
+.brand small{display:block;font-family:Montserrat;font-size:.58rem;letter-spacing:.42em;color:var(--gray);font-weight:600;margin-top:3px}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+nav a:hover{color:var(--blue)}
+nav .btn{padding:11px 20px;color:#fff}
+.burger{display:none;background:none;border:0;font-size:1.7rem;color:var(--navy);cursor:pointer}
+/* hero */
+.hero{position:relative;color:#fff;min-height:88vh;display:flex;align-items:center;background:url(city.jpg) center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,45,91,.96) 0%,rgba(11,45,91,.85) 45%,rgba(11,45,91,.35) 100%)}
+.hero .wrap{position:relative;padding-top:60px;padding-bottom:60px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;line-height:1.05;letter-spacing:.02em;margin:1rem 0 1.2rem;max-width:760px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.15rem;max-width:560px;color:#dce6f3;margin-bottom:2rem}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .stats{display:flex;gap:48px;margin-top:3.5rem;flex-wrap:wrap}
+.hero .stats b{display:block;font-family:Montserrat;font-size:2rem;font-weight:800}
+.hero .stats span{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#a9c1df}
+/* values */
+.values{background:var(--navy);color:#fff}
+.values .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.val{padding:34px 22px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.val:last-child{border:0}
+.val svg{width:38px;height:38px;margin:0 auto 12px;color:var(--blue)}
+.val h3{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase}
+.val p{font-size:.85rem;color:#a9c1df;margin-top:4px}
+section{padding:100px 0}
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:3rem}
+.card{background:#fff;border:1px solid var(--mist);border-radius:6px;padding:34px 28px;transition:.25s;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--blue);transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(11,45,91,.12)}
+.card:hover:before{width:100%}
+.card .ic{width:54px;height:54px;border-radius:6px;background:var(--bg);display:grid;place-items:center;color:var(--navy);margin-bottom:18px}
+.card .ic svg{width:28px;height:28px}
+.card h3{color:var(--navy);font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--gray);font-size:.95rem}
+.card.feat{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.feat h3{color:#fff}.card.feat p{color:#c3d3e8}.card.feat .ic{background:var(--blue);color:#fff}
+.tag{position:absolute;top:18px;right:18px;font-family:Montserrat;font-size:.62rem;letter-spacing:.2em;font-weight:700;background:var(--blue);color:#fff;padding:4px 9px;border-radius:3px}
+/* about */
+.about{background:var(--bg)}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.split img{border-radius:6px;box-shadow:0 30px 60px rgba(11,45,91,.18)}
+.checks{list-style:none;margin:1.6rem 0 2rem}
+.checks li{padding:9px 0 9px 34px;position:relative;border-bottom:1px solid var(--mist)}
+.checks li:before{content:"";position:absolute;left:0;top:13px;width:20px;height:20px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:3rem;counter-reset:s}
+.step{border-top:3px solid var(--mist);padding-top:22px;counter-increment:s}
+.step:before{content:"0" counter(s);font-family:Montserrat;font-weight:800;font-size:2.4rem;color:var(--blue);display:block;line-height:1;margin-bottom:10px}
+.step h3{color:var(--navy);font-size:1.05rem;margin-bottom:6px}
+.step p{color:var(--gray);font-size:.93rem}
+/* gallery */
+.gallery{background:var(--ink);color:#fff}
+.gallery h2{color:#fff}.gallery .lead{color:#a9c1df}
+.g{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:14px;margin-top:3rem}
+.g div{border-radius:6px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.g div span{position:absolute;left:14px;bottom:12px;font-family:Montserrat;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;background:rgba(11,45,91,.85);padding:6px 10px;border-radius:3px}
+.g .big{grid-row:span 2}
+/* areas */
+.areas{text-align:center}
+.areas .lead{margin:0 auto}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:2rem}
+.pills span{border:1px solid var(--mist);padding:10px 22px;border-radius:40px;font-family:Montserrat;font-weight:600;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.pills span.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* quote */
+.quote{background:linear-gradient(120deg,var(--navy),#123d78)}
+.quote .split{align-items:start}
+.quote h2{color:#fff}.quote .lead{color:#c3d3e8}
+.contact{margin-top:2rem;display:grid;gap:16px;color:#fff}
+.contact div{display:flex;gap:14px;align-items:center}
+.contact i{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-style:normal;color:var(--blue)}
+.contact i svg{width:20px;height:20px}
+.contact small{display:block;color:#a9c1df;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+form{background:#fff;border-radius:8px;padding:36px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+form h3{color:var(--navy);font-size:1.3rem;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:14px}
+input,select,textarea{width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--mist);border-radius:4px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);border-color:transparent;background:#fff}
+form .btn{width:100%;margin-top:6px}
+.ok{display:none;text-align:center;padding:40px 10px}
+.ok b{display:block;font-family:Montserrat;color:var(--navy);font-size:1.3rem;margin:10px 0}
+/* footer */
+footer{background:#071f40;color:#a9c1df;padding:60px 0 30px;font-size:.9rem}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-family:Montserrat;color:#fff;font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px}
+footer li{list-style:none;padding:4px 0}
+footer a:hover{color:var(--blue)}
+.fbrand b{color:#fff;font-family:Montserrat;font-size:1.4rem;letter-spacing:.06em}
+.fbrand em{display:block;color:var(--blue);font-style:normal;font-family:Montserrat;letter-spacing:.3em;font-size:.7rem;margin:6px 0 14px}
+.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+/* responsive */
+@media(max-width:900px){
+ nav{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:18px;border-bottom:1px solid var(--mist)}
+ nav.open{display:flex}.burger{display:block}
+ .values .wrap,.steps{grid-template-columns:1fr 1fr}
+ .val:nth-child(2){border-right:0}
+ .grid{grid-template-columns:1fr 1fr}
+ .split{grid-template-columns:1fr;gap:40px}
+ .g{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.g .big{grid-column:span 2;grid-row:auto}
+ .fgrid{grid-template-columns:1fr 1fr}
+ section{padding:70px 0}
+}
+@media(max-width:560px){.grid,.steps,.row,.fgrid{grid-template-columns:1fr}.hero .stats{gap:28px}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <a href="#home" class="brand"><img src="icon.png" alt="Skyrise icon"><div><b>SKYRISE</b><small>CONSTRUCTION</small></div></a>
+  <button class="burger" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  <nav onclick="this.classList.remove('open')">
+   <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="#work">Our Work</a>
+   <a href="#quote" class="btn btn-blue">Free Estimate</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" id="home" style="padding:0">
+ <div class="wrap">
+  <div class="eyebrow">Florida Rooted · Built Higher</div>
+  <h1>Rise above <span>the surface.</span></h1>
+  <p>High-performance flooring and surface solutions for homes and businesses — starting with epoxy and built for what's next. We raise the standard, from the ground up.</p>
+  <div class="ctas"><a href="#quote" class="btn btn-blue">Get a Free Estimate</a><a href="#services" class="btn btn-ghost">Our Services</a></div>
+  <div class="stats">
+   <div><b>100%</b><span>Licensed &amp; Insured</span></div>
+   <div><b>5★</b><span>Client Focused</span></div>
+   <div><b>FL</b><span>Statewide Service</span></div>
+  </div>
+ </div>
+</section>
+
+<div class="values">
+ <div class="wrap">
+  <div class="val"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5l8-3z"/></svg><h3>Quality Driven</h3><p>Premium materials, precise work</p></div>
+  <div class="val"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="14" width="4" height="7"/><rect x="10" y="9" width="4" height="12"/><rect x="17" y="3" width="4" height="18"/></svg><h3>Built for What's Next</h3><p>Modern systems that last</p></div>
+  <div class="val"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h6l1 3 3 1 1 4 3 4 1 5-3 1-3-3-2-4-3-1-2-4-2-2z"/></svg><h3>Florida Rooted</h3><p>Local team, local know-how</p></div>
+  <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M16 14c3 0 6 1.5 6 5"/></svg><h3>People Focused</h3><p>Clear, honest communication</p></div>
+ </div>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <div class="eyebrow">What We Do</div>
+  <h2>Surfaces built to perform.</h2>
+  <p class="lead">From garages to showrooms, we install floors that look sharp on day one and hold up for years. Residential and commercial.</p>
+  <div class="grid">
+   <div class="card feat"><span class="tag">SPECIALTY</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l9 4 9-4M3 12l9 4 9-4M12 3l9 4-9 4-9-4z"/></svg></div><h3>Epoxy Flooring</h3><p>Seamless, chemical- and stain-resistant coatings for garages, warehouses, shops and showrooms. Solid, flake and metallic finishes.</p></div>
+   <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M8 14v6"/></svg></div><h3>Luxury Vinyl Plank (LVP)</h3><p>Waterproof, durable and beautiful — the ideal choice for Florida homes, rentals and busy offices.</p></div>
+   <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 12v6"/></svg></div><h3>Hardwood</h3><p>Solid and engineered hardwood installed with precision for a warm, timeless finish.</p></div>
+   <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div><h3>Tile &amp; Porcelain</h3><p>Floors, showers and backsplashes — clean layouts, tight grout lines, flawless leveling.</p></div>
+   <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg></div><h3>Commercial Projects</h3><p>Retail, offices, restaurants and industrial spaces — scheduled around your operation.</p></div>
+   <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4l6 6-10 10H4v-6zM12 6l6 6"/></svg></div><h3>Prep &amp; Repair</h3><p>Old floor removal, subfloor leveling, concrete grinding and crack repair — the foundation of every great floor.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap split">
+  <img src="truck.jpg" alt="Skyrise Construction branded work truck">
+  <div>
+   <div class="eyebrow">Why Skyrise</div>
+   <h2>A stronger Florida, one floor at a time.</h2>
+   <p class="lead">We're a professional, reliable crew that treats every job — a single room or a full commercial build-out — like it carries our name. Because it does.</p>
+   <ul class="checks">
+    <li>Free, detailed estimates with no surprises</li>
+    <li>On-time starts and clean job sites</li>
+    <li>Premium materials from trusted brands</li>
+    <li>Licensed, insured and workmanship guaranteed</li>
+   </ul>
+   <a href="#quote" class="btn btn-blue">Start Your Project</a>
+  </div>
+ </div>
+</section>
+
+<section id="process">
+ <div class="wrap">
+  <div class="eyebrow">How It Works</div>
+  <h2>Simple from start to finish.</h2>
+  <div class="steps">
+   <div class="step"><h3>Request an Estimate</h3><p>Tell us about your space using the form or a quick call.</p></div>
+   <div class="step"><h3>On-Site Visit</h3><p>We measure, check the subfloor and help you pick the right material.</p></div>
+   <div class="step"><h3>Clear Proposal</h3><p>A written quote with scope, price and schedule — no hidden fees.</p></div>
+   <div class="step"><h3>Install &amp; Walkthrough</h3><p>Professional installation, full cleanup and a final walkthrough with you.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="gallery" id="work">
+ <div class="wrap">
+  <div class="eyebrow">Real Work. A Brighter Florida.</div>
+  <h2>On site. Onward. Higher.</h2>
+  <p class="lead">A team you'll recognize — branded, equipped and ready for your project.</p>
+  <div class="g">
+   <div class="big" style="background-image:url(sign.jpg)"><span>Jobsite</span></div>
+   <div style="background-image:url(hat.jpg)"><span>Safety First</span></div>
+   <div style="background-image:url(polo.jpg)"><span>Our Crew</span></div>
+   <div style="background-image:url(truck.jpg)"><span>On the Road</span></div>
+   <div style="background-image:url(city.jpg)"><span>Florida</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="areas">
+ <div class="wrap">
+  <div class="eyebrow">Service Areas</div>
+  <h2>Proudly serving across Florida.</h2>
+  <p class="lead">Based in Tampa, with crews ready for residential and commercial projects throughout the state.</p>
+  <div class="pills"><span class="on">Tampa</span><span>Orlando</span><span>Miami</span><span>St. Petersburg</span><span>Clearwater</span><span>Across Florida</span></div>
+ </div>
+</section>
+
+<section class="quote" id="quote">
+ <div class="wrap split">
+  <div>
+   <div class="eyebrow">Free Estimate</div>
+   <h2>Let's build something that lasts.</h2>
+   <p class="lead">Send us a few details and we'll get back to you within one business day.</p>
+   <div class="contact">
+    <div><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i><div><small>Call us</small><a href="tel:8135550184">(813) 555-0184</a></div></div>
+    <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><div><small>Email</small><a href="mailto:info@skyriseconstruction.com">info@skyriseconstruction.com</a></div></div>
+    <div><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></i><div><small>Headquarters</small>Tampa, FL</div></div>
+   </div>
+  </div>
+  <form id="f">
+   <div id="fields">
+    <h3>Request your free estimate</h3>
+    <div class="row"><label>Name<input required name="name"></label><label>Phone<input required name="phone" type="tel"></label></div>
+    <label>Email<input required name="email" type="email"></label>
+    <div class="row">
+     <label>Service<select name="service"><option>Epoxy Flooring</option><option>Luxury Vinyl Plank</option><option>Hardwood</option><option>Tile &amp; Porcelain</option><option>Commercial Project</option><option>Prep &amp; Repair</option></select></label>
+     <label>Property<select name="type"><option>Residential</option><option>Commercial</option></select></label>
+    </div>
+    <label>Approx. size (sq ft) &amp; details<textarea name="msg" rows="3" placeholder="e.g. 600 sq ft garage, epoxy flake finish"></textarea></label>
+    <button class="btn btn-blue" type="submit">Send Request</button>
+   </div>
+   <div class="ok" id="ok"><img src="icon.png" alt="" style="height:60px;margin:0 auto"><b>Thank you!</b><p style="color:var(--gray)">Your request is in. We'll reach out within one business day.</p></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div class="fbrand"><b>SKYRISE</b><em>RISE ABOVE THE SURFACE™</em><p>Surfaces today. Stronger tomorrow. Residential and commercial flooring across Florida.</p></div>
+   <div><h4>Services</h4><ul><li><a href="#services">Epoxy Flooring</a></li><li><a href="#services">LVP</a></li><li><a href="#services">Hardwood</a></li><li><a href="#services">Tile</a></li></ul></div>
+   <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><a href="#work">Our Work</a></li><li><a href="#quote">Free Estimate</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li>(813) 555-0184</li><li>info@skyriseconstruction.com</li><li>Tampa, FL</li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Skyrise Construction</span><span>Tampa · Orlando · Miami · Across Florida</span></div>
+ </div>
+</footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ document.getElementById('fields').style.display='none';
+ document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
